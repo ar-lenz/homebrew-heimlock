@@ -1,6 +1,4 @@
-# Heimlock — Homebrew Cask
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+# Heimlock
 
 Heimlock is a local-first CI system that transforms messy AI-generated code into clean, reviewable pull requests. It intercepts `git push` operations through a local bare repo "gate", runs a transformation pipeline, and lets you review changes before forwarding to upstream.
 
@@ -68,8 +66,4 @@ Before filing, please check that the issue is related to the Homebrew installati
 
 Use the [issue template](ISSUE_TEMPLATE.md) when submitting.
 
----
 
-## License
-
-MIT
