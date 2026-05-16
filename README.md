@@ -58,12 +58,14 @@ brew upgrade --cask heimlock
 
 ---
 
+## Changelog
+
+Release notes for each version are available in [CHANGELOG.md](CHANGELOG.md).
+
+---
+
 ## Reporting Issues
 
-File all issues in **this repository**. The main Heimlock source code is private, so this is the public-facing issue tracker.
-
-Before filing, please check that the issue is related to the Homebrew installation or distribution — not a bug in Heimlock itself. If you are unsure, file it here and we will redirect if needed.
-
-Use the [issue template](ISSUE_TEMPLATE.md) when submitting.
+File all issues in **this repository**. Use the [issue template](ISSUE_TEMPLATE.md) when submitting.
 
 
