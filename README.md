@@ -17,7 +17,7 @@ brew install --cask heimlock
 
 ### Via direct download
 
-Download the latest `.dmg` from the [releases page](https://github.com/ar-lenz/heimlock/releases).
+Download the latest `.dmg` from the [files directory](https://github.com/ar-lenz/homebrew-heimlock/tree/main/files).
 
 ---
 
