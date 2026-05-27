@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.6.0
+
+## What's Changed
+
+### Window Transparency
+macOS window transparency via private API, AppearanceProvider for opacity control, and CSS token refactor to support a single-layer translucency system. Tune opacity in Settings → Appearance.
+
+### Workspace Dashboard
+New sessions overview (RunCard + RunDashboard) with status-grouped, searchable cards replacing the auto-select-into-first-run flow. Centralized format and run-status utility modules consumed across all workspace components.
+
+### Design System
+Slider, Switch, IconWithStatus, StatusBadge primitives added to the design system, backed by Radix UI.
+
+### Settings Overhaul
+Settings rebuilt with a nav/row section system: model picker, provider toggle, agent catalog, appearance, and system sections.
+
+### Default Steps Renamed
+Default pipeline steps renamed for clarity — test, strict-review, dependencies, describe-document — and unused steps removed.
+
+### Agent & Session Tracking
+OpenCode usage capture, agent session persistence, and Claude Code hook fixes. Idle timeout bounds agent runtime.
+
+### CI/CD
+Homebrew tap publishing workflow, release note sync to CHANGELOG.md, and PR template enforcement.
+
 ## v0.5.11
 
 ## What's Changed
