@@ -1,8 +1,8 @@
 cask "heimlock" do
-  version "0.6.0"
-  sha256 "c3ab81b894711f63843fc7be6126f4303b027668fed9953827ae54944c455939"
+  version "0.7.0"
+  sha256 "f79c227b30178ad6ca0377d48b681dd65a7bea79008457960071f68284ddb8e2"
 
-  url "https://github.com/ar-lenz/homebrew-heimlock/raw/main/files/Heimlock-0.6.0-universal.dmg"
+  url "https://github.com/ar-lenz/homebrew-heimlock/raw/main/files/Heimlock-0.7.0-universal.dmg"
   name "Heimlock"
   desc "Local-first gate that turns every git push into a slop-free PR"
   homepage "https://github.com/ar-lenz/heimlock"

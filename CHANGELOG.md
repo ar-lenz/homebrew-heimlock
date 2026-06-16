@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.7.0
+
+## Heimlock v0.7.0
+
+### Features
+- **Passive advisory monitoring of unregistered repos** — opt-in, folder-scoped. Heimlock watches pushes to `main`/`master` on chosen repos and runs a review-only advisory pipeline that surfaces findings without rewiring remotes or blocking pushes. Includes a dedicated Monitoring view (now a top-level nav item with an unread-findings count), a tray badge, and per-repo opt-in in Settings.
+- **Live model catalog (models.dev)** — the agent/model picker shows current cloud models (Claude Opus 4.8, Fable 5, GPT-5.x, …), cached by the daemon, with bundled defaults as an offline fallback and free-form custom entry.
+- **Window transparency & opacity** controls in Appearance settings.
+- New design-system components (Slider, Switch, IconWithStatus, StatusBadge) and a Sessions overview.
+
+### Bug Fixes
+- **OpenCode 1.16 empty responses** — opencode 1.16 changed its `--format json` event shape; the adapter only matched 1.15, so it dropped all assistant text. Now handles both.
+- Critique and the other reviews no longer surface internal agent failures as user-facing findings.
+- Mermaid and workflow-graph arrowheads render correctly.
+- Patched RUSTSEC and npm dependency advisories; fixed design-system `.d.ts` output path.
+
+_Note: version advances 0.5.11 → 0.7.0; 0.6.0 was already published as a tag on an earlier commit and is left untouched._
+
 ## v0.6.0
 
 ## What's Changed
