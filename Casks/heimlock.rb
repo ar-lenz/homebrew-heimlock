@@ -13,7 +13,7 @@ cask "heimlock" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
   depends_on formula: "semgrep"
 
   app "Heimlock.app"
