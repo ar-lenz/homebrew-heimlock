@@ -2,7 +2,7 @@ cask "heimlock" do
   version "0.8.0"
   sha256 "97ca397b408ae05aed12072450e0dbfbbbff4c6a3b299820ea605d064b18cf9c"
 
-  url "https://github.com/ar-lenz/heimlock/releases/download/heimlock-v#{version}/Heimlock-macos-arm64.dmg"
+  url "https://github.com/ar-lenz/homebrew-heimlock/releases/download/v#{version}/Heimlock-macos-arm64.dmg"
   name "Heimlock"
   desc "Agentic IDE with a built-in slop-killing code-review gate"
   homepage "https://github.com/ar-lenz/heimlock"
