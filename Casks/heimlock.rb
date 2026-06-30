@@ -1,6 +1,6 @@
 cask "heimlock" do
-  version "0.10.2"
-  sha256 "dbc7889390fa0be7a9fc1868eb3d5ab8ca8793a3b5e5f8e21aa588ede51ef94c"
+  version "0.10.3"
+  sha256 "48f6a12032fcccec47b3bc04317bbb2248fd78c925f67042127c744a813f11ee"
 
   url "https://github.com/ar-lenz/homebrew-heimlock/releases/download/v#{version}/Heimlock-macos-arm64.dmg"
   name "Heimlock"
@@ -36,15 +36,21 @@ cask "heimlock" do
     brew_semgrep = "#{HOMEBREW_PREFIX}/bin/semgrep"
     FileUtils.ln_sf(brew_semgrep, File.join(internal_bin, "semgrep")) if File.exist?(brew_semgrep)
 
-    system_command "#{appdir}/Heimlock.app/Contents/Resources/heimlock/heimlock",
-                   args:         ["daemon", "install"],
-                   must_succeed: false
+    heimlock_bin = "#{appdir}/Heimlock.app/Contents/Resources/heimlock/heimlock"
+    if File.exist?(heimlock_bin)
+      system_command heimlock_bin,
+                     args:         ["daemon", "install"],
+                     must_succeed: false
+    end
   end
 
   uninstall_preflight do
-    system_command "#{appdir}/Heimlock.app/Contents/Resources/heimlock/heimlock",
-                   args:         ["daemon", "stop"],
-                   must_succeed: false
+    heimlock_bin = "#{appdir}/Heimlock.app/Contents/Resources/heimlock/heimlock"
+    if File.exist?(heimlock_bin)
+      system_command heimlock_bin,
+                     args:         ["daemon", "stop"],
+                     must_succeed: false
+    end
     system_command "/bin/rm",
                    args:         ["-f", File.expand_path("~/Library/LaunchAgents/dev.heimlock.daemon.plist")],
                    must_succeed: false
@@ -54,12 +60,4 @@ cask "heimlock" do
     "~/.heimlock",
     "~/Library/Application Support/heimlock-engine",
   ]
-
-  caveats <<~EOS
-    Heimlock is Apple Silicon only for now and ad-hoc signed (not
-    Apple-notarised). The postflight clears the quarantine attribute
-    automatically. If you still see a Gatekeeper warning on first launch:
-
-        sudo xattr -cr /Applications/Heimlock.app
-  EOS
 end
