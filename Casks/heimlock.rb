@@ -1,6 +1,6 @@
 cask "heimlock" do
-  version "0.9.0"
-  sha256 "17a457c75e5405e0cf7e195c74511e7f06e439d9b3bada708b1d7d6ca800b3dd"
+  version "0.10.0"
+  sha256 "3a32dbb055cc91fbece4919e544d9d034ed2e8f6aef81855a9ed88f963771ec9"
 
   url "https://github.com/ar-lenz/homebrew-heimlock/releases/download/v#{version}/Heimlock-macos-arm64.dmg"
   name "Heimlock"
@@ -50,7 +50,10 @@ cask "heimlock" do
                    must_succeed: false
   end
 
-  zap trash: "~/.heimlock"
+  zap trash: [
+    "~/.heimlock",
+    "~/Library/Application Support/heimlock-engine",
+  ]
 
   caveats <<~EOS
     Heimlock is Apple Silicon only for now and ad-hoc signed (not
