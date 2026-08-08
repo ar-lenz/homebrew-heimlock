@@ -1,11 +1,11 @@
 cask "heimlock" do
-  version "0.12.0"
-  sha256 "ada7e6156bd9741b13aa5ad1e8d906a57cc99028ebc02c0f4e8da7f4acb72cbb"
+  version "0.13.0"
+  sha256 "e90eb0ecaa292bb2619e446469c6a4ec381db79af522aa70978d20b6d02cc04f"
 
   url "https://github.com/ar-lenz/homebrew-heimlock/releases/download/v#{version}/Heimlock-macos-arm64.dmg"
   name "Heimlock"
   desc "Agentic IDE with a built-in slop-killing code-review gate"
-  homepage "https://github.com/ar-lenz/heimlock"
+  homepage "https://github.com/ar-lenz/homebrew-heimlock"
 
   livecheck do
     url :url
@@ -13,7 +13,7 @@ cask "heimlock" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: :ventura
+  depends_on macos: ">= :ventura"
   depends_on formula: "semgrep"
 
   app "Heimlock.app"
@@ -52,12 +52,9 @@ cask "heimlock" do
                      must_succeed: false
     end
     system_command "/bin/rm",
-                   args:         ["-f", File.expand_path("~/Library/LaunchAgents/dev.heimlock.daemon.plist")],
+                   args:         ["-f", File.expand_path("~/Library/LaunchAgents/com.arlenz.heimlock.daemon.plist")],
                    must_succeed: false
   end
 
-  zap trash: [
-    "~/.heimlock",
-    "~/Library/Application Support/heimlock-engine",
-  ]
+  zap trash: "~/.heimlock"
 end
