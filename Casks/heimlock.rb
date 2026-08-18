@@ -1,6 +1,6 @@
 cask "heimlock" do
-  version "0.14.0"
-  sha256 "c5fc8d0117707308c40c149cf7fa7858d54a36ca00381b340b6ef21b0e303d75"
+  version "0.14.1"
+  sha256 "65379e59182eeffb78ae332c27db8535925b5c414d742a3a4f2c356c3b07386f"
 
   url "https://github.com/ar-lenz/homebrew-heimlock/releases/download/v#{version}/Heimlock-macos-arm64.dmg"
   name "Heimlock"
